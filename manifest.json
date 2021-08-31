@@ -1,0 +1,30 @@
+{
+    "manifest_version": 2,
+    "name": "DyslexiView",
+    "description": "DyslexiView is a chrome extension that converts font on a webpage to a dyslexia friendly font.",
+    "version": "1.0.0",
+    "author": "David Courtis",
+    "browser_action": {
+        "default_icon": "./assets/images/icon.png",
+        "default_title": "DyslexiView"
+    },
+    "background": {
+        "persistent": false,
+        "scripts": [
+            "./assets/js/background.js"
+        ]
+    },
+    "permissions": [
+        "activeTab",
+        "storage",
+        "contextMenus"
+    ],
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "css": ["./assets/css/main.css"],
+            "js": ["./assets/js/converter.js"]
+        }
+    ],
+    "web_accessible_resources": ["./assets/html/widget.html"]
+}
