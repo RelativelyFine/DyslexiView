@@ -1,6 +1,6 @@
 // Initialize button with user's preferred font
-let changeColor = document.getElementById("changeText");
+let changeText = document.getElementById("changeText");
 
 chrome.storage.sync.get("color", ({ color }) => {
-  changeColor.style.backgroundColor = color;
+    changeText.style.backgroundColor = color;
 });
